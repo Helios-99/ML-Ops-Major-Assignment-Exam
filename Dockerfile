@@ -18,4 +18,4 @@ COPY models/ ./models/
 ENV PYTHONPATH=/app/src
 
 # Default entrypoint for container
-CMD ["python", "src/predict.py"]
+CMD ["python", "-m", "src.predict"]
