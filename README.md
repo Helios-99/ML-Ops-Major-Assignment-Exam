@@ -1,8 +1,8 @@
-MLOps Pipeline for Linear Regression
-Description
+# MLOps Pipeline for Linear Regression
+## Description
 This was my major assignment for an MLOps course. The goal was to build a complete, automated pipeline for a basic scikit-learn Linear Regression model. It handles everything from running tests to training the model, quantizing it, and finally packaging it into a Docker container.
 
-Key Features
+## Key Features
 Automated CI/CD: The entire pipeline is triggered on every push to the main branch.
 
 Model Training & Evaluation: Trains a model and evaluates its performance.
@@ -13,7 +13,7 @@ Model Quantization: A custom implementation of 8-bit and 16-bit quantization.
 
 Docker Containerization: The prediction script is packaged into a Docker image for portability.
 
-Comparison Table
+## Comparison Table
 Quantization reduces model size at the cost of some precision. The table below shows that 16-bit quantization provides a good balance, significantly reducing size with almost no impact on accuracy. In contrast, 8-bit quantization severely degrades performance for this model.
 | Model Version | R² Score | MSE | Size (KB) |
 | :--- | :---: | :---: | :---: |
@@ -21,8 +21,7 @@ Quantization reduces model size at the cost of some precision. The table below s
 | Quantized (16-bit) | 0.575 | 0.557 | ~0.55 KB |
 | Quantized (8-bit) | -46.683| 62.484| ~0.53 KB |
 
-Export to Sheets
-Getting Started
+### Getting Started
 Prerequisites: You'll need Python 3.9+, Git, and Docker installed.
 
 To get a local copy up and running:
@@ -67,5 +66,5 @@ build_model_artifacts: Trains and quantizes the model, then saves the model file
 
 package_and_verify_image: Builds the Docker image with the saved models and runs it as a final test.
 
-Conclusion
+## Conclusion
 16-bit quantization is the clear winner here. It provides a decent size reduction with almost no drop in performance. 8-bit quantization is too aggressive for this model and completely breaks its predictive power (a negative R² score is a very bad sign).
