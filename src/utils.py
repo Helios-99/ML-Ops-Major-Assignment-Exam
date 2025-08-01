@@ -6,7 +6,7 @@ from sklearn.datasets import fetch_california_housing
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_squared_error
 
-def prepare_california_housing_data(split_ratio=0.2, seed=42):
+def load_dataset(split_ratio=0.2, seed=42):
     dataset = fetch_california_housing()
     features_df = pd.DataFrame(dataset.data, columns=dataset.feature_names)
     target_series = pd.Series(dataset.target, name="MedianValue")
