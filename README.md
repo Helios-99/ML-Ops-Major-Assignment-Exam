@@ -28,9 +28,9 @@ To get a local copy up and running:
 
 Bash
 
-# 1. Clone the repository
+### 1. Clone the repository
 
-# 2. Set up a virtual environment and install dependencies
+### 2. Set up a virtual environment and install dependencies
 python -m venv venv
 source venv/bin/activate  # Use `.\venv\Scripts\Activate.ps1` on PowerShell
 pip install -r requirements.txt
@@ -39,23 +39,23 @@ You can run each part of the process individually.
 
 Bash
 
-# Run the test suite
+### Run the test suite
 pytest
 
-# Train the model
+### Train the model
 python -m src.train
 
-# Run quantization analysis
+### Run quantization analysis
 python -m src.quantize
 Docker Usage
 To build and run the application as a Docker container:
 
 Bash
 
-# 1. Build the image
+### 1. Build the image
 docker build -t regression-app .
 
-# 2. Run the container
+### 2. Run the container
 docker run --rm regression-app
 CI/CD Pipeline
 The workflow is defined in .github/workflows/ci.yml and automates the entire process in three stages:
