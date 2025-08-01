@@ -16,7 +16,7 @@ def validate_model_performance():
     
     try:
         # 1. Load the trained model artifact
-        regressor = utils.load_model(MODEL_PATH)
+        regressor = utils.load_artifact(MODEL_PATH)
         print(f"Model '{MODEL_PATH}' loaded successfully.")
 
         # 2. Load the test dataset
