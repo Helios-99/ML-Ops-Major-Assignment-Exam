@@ -70,7 +70,7 @@ def test_model_performance(dataset):
     
     # Make predictions and check performance
     predictions = model.predict(X_test)
-    r2, _ = utils.compute_metrics(y_test, predictions)
+    r2, _ = utils.calculate_regression_performance(y_test, predictions)
     
     assert r2 > MINIMUM_R2_SCORE, f"Model R2 score {r2:.3f} was below the threshold of {MINIMUM_R2_SCORE}"
 
