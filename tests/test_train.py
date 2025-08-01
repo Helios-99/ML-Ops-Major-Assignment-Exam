@@ -93,7 +93,7 @@ def test_model_persistence(dataset, tmp_path):
     utils.save_model(model, model_path)
     assert os.path.exists(model_path), "Model file was not created."
     
-    loaded_model = utils.load_model(model_path)
+    loaded_model = utils.load_artifact(model_path)
     
     # The loaded model should make identical predictions to the original.
     original_preds = model.predict(X_test)
