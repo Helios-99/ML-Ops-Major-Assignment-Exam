@@ -61,7 +61,7 @@ def main():
     
     # Alright, first things first, load the original model
     print("Loading original model...")
-    model = utils.load_model(MODEL_PATH)
+    model = utils.load_artifact(MODEL_PATH)
     coeffs, bias = model.coef_, model.intercept_
     
     # And the data we'll use to test it
